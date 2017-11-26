@@ -1,0 +1,16 @@
+<div class="timeline-container">
+  <ul id="category-timeline">
+    {{#each model.timeline_topics as |topic|}}
+      <li>
+        <a href="/t/{{topic.slug}}/{{topic.id}}">{{topic.title}}</a>
+        {{#if topic.deep_links}}
+          <ul class="deep-links">
+            {{#each topic.deep_links as |link|}}
+              <li><a href="{{link.href}}">{{link.title}}</a></li>
+            {{/each}}
+          </ul>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
